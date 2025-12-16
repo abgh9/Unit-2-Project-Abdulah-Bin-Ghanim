@@ -48,9 +48,9 @@ u (Micro= *10^-6)
 ### 5 History File (File Input/Output)
 -All completed calculations are appended to history.txt.
 
-=Each entry is written on a new line.
+-Each entry is written on a new line.
 
-=If the history file does not exist, the program displays a clear message.
+-If the history file does not exist, the program displays a clear message.
 
 ### 6 Running
 Compile the program using the Makefile:
