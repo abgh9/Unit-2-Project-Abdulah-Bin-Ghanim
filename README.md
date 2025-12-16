@@ -1,36 +1,63 @@
-# ELEC2645 Unit 2 Project Template
-
-** PLEASE DELETE THIS README AND REPLACE IT WITH YOUR OWN README.md FILE DESCRIBING YOUR PROJECT **
-
-
-This is the basic code for a command line application which you should use for your Unit 2 project.
-
-The code has separated the menu handling code in `main.c` and the function implementations in `funcs.c`. You should add your code to `funcs.c` (or you can create new files if you wish), and update `main.c` to call your functions from the menu.
+### 1 Electronics Helper Program
+Overview:
+This project is a menu‑driven C application designed to help with common basic electronics calculations and view the results and store it in persistant history.
 
 
-### 1 Run code
+### 2 Features
+Resistor Colour Code Decoder (4‑band and 5‑band resistors)
 
-You can build the code as we have been using in the labs with 
-`gcc main.c funcs.c -o main.out -lm` (the `-lm` is required to link the math library). You can also use `make -B` to force a rebuild using the provided `Makefile`.
+Series and Parallel Resistor Calculator
 
-Then run the code with `./main.out`
+Ohm’s Law Calculator (V, I, R)
 
+Calculation History saved to a text file
 
-### 2 The assignment
-
-Please read the assignment brief on the Minerva page for details of what you need to implement. 
-
+Input Handling (handles invalid and non‑numeric input)
 
 
-### 3 Test command
+### 3 How the Program Works
+1.The program starts in main.c and displays a menu.
 
-The `test.sh` script is provided to check that your code compiles correctly. This is what the autograder will use to check your submission. You can run it with `bash test.sh` or `./test.sh` or just `make test`. 
+2.User input is validated using helper functions from input.c.
 
-You do not need to modify this script, but you can look at it to see what it does.
+3.Each menu option is routed through funcs.c to the correct module.
+
+4.Calculations are performed in their respective source files.
+
+5.Results are displayed to the user and appended to history.txt.
+
+6.The user can view saved history at any time from the menu.
 
 
-### 4 Submit Solution
+### 4 Input Handling
+-All user input is read using fgets to avoid buffer issues.
 
-Use the same method as previous labs to commit and push your code to your GitHub repository for the autograder to check. 
+-Numeric input supports engineering suffixes:
 
-In your final journal post, please include a link to your GitHub repository containing your code  *and* a zip file of your code as an attachment.
+k (kilo = *10^3)
+
+M (Mega= *10^6)
+
+m (Milli= *10^-3)
+
+u (Micro= *10^-6)
+
+-When invalid input is detected and the user is re‑prompted.
+
+
+### 5 History File (File Input/Output)
+-All completed calculations are appended to history.txt.
+
+=Each entry is written on a new line.
+
+=If the history file does not exist, the program displays a clear message.
+
+### 6 Running
+Compile the program using the Makefile:
+make
+Run the program:
+./main.out
+
+
+Author,
+Abdullah Bin Ghanim201860162
